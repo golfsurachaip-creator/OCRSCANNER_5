@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ข้อความที่ถูกต้อง (1 บรรทัด = 1 ข้อความ)"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/editTargets"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="top|start"
+            android:hint="เช่น\nLOT2410-001\n8851234567890"
+            android:inputType="textMultiLine|textNoSuggestions"
+            android:minLines="4" />
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp">
+
+            <RadioButton
+                android:id="@+id/radioExact"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="บาร์โค้ด: ต้องตรงกันทั้งหมด (แนะนำ)" />
+
+            <RadioButton
+                android:id="@+id/radioContains"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="บาร์โค้ด: มีข้อความนี้อยู่ก็ถือว่าถูก" />
+        </RadioGroup>
+
+        <CheckBox
+            android:id="@+id/chkIgnoreCase"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="ไม่สนตัวพิมพ์เล็ก/ใหญ่" />
+
+        <CheckBox
+            android:id="@+id/chkIgnoreSpace"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ไม่สนช่องว่างและขีด (- _ . /)" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="การอ่านข้อความ (OCR)"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/txtTriggerKey"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp" />
+
+        <Button
+            android:id="@+id/btnLearnKey"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ตั้งปุ่มยิงสำหรับอ่านข้อความ…" />
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RadioButton
+                android:id="@+id/radioAll"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ต้องเจอครบทุกข้อความในภาพ" />
+
+            <RadioButton
+                android:id="@+id/radioAny"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="เจอข้อความใดข้อความหนึ่งก็ถูก" />
+        </RadioGroup>
+
+        <CheckBox
+            android:id="@+id/chkFuzzy"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ยอมให้ตัวที่หน้าตาคล้ายกัน (O=0, I=1=L, S=5, B=8, Z=2)" />
+
+        <CheckBox
+            android:id="@+id/chkAutoTorch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="เปิดไฟอัตโนมัติขณะอ่านข้อความ" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="กรอบอ่านข้อความ"
+            android:textStyle="bold" />
+
+        <CheckBox
+            android:id="@+id/chkRoi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="อ่านเฉพาะข้อความที่อยู่ในกรอบ" />
+
+        <TextView
+            android:id="@+id/lblWidth"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="ความกว้างกรอบ" />
+
+        <SeekBar
+            android:id="@+id/seekWidth"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:max="100" />
+
+        <TextView
+            android:id="@+id/lblHeight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="ความสูงกรอบ" />
+
+        <SeekBar
+            android:id="@+id/seekHeight"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:max="100" />
+
+        <TextView
+            android:id="@+id/lblPos"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="ตำแหน่งกรอบ (บน ↔ ล่าง)" />
+
+        <SeekBar
+            android:id="@+id/seekPos"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:max="100" />
+
+        <TextView
+            android:id="@+id/lblZoom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="ซูมกล้อง" />
+
+        <SeekBar
+            android:id="@+id/seekZoom"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:max="100" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="รับข้อมูลแบบ Broadcast Intent (ไม่บังคับ)"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ปล่อยว่างไว้ = รับแบบคีย์บอร์ด (ใช้ได้กับเกือบทุกรุ่น)"
+            android:textSize="12sp" />
+
+        <Button
+            android:id="@+id/btnPreset"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="เลือกยี่ห้อเครื่อง…" />
+
+        <EditText
+            android:id="@+id/editAction"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Intent action"
+            android:inputType="text|textNoSuggestions"
+            android:textSize="14sp" />
+
+        <EditText
+            android:id="@+id/editExtra"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Extra key (ว่างได้ แอปจะหาให้เอง)"
+            android:inputType="text|textNoSuggestions"
+            android:textSize="14sp" />
+    </LinearLayout>
+</ScrollView>

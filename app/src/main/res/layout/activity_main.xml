@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#111111"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/targetsText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#1E3A5F"
+        android:padding="10dp"
+        android:textColor="#FFFFFF"
+        android:textSize="15sp" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="260dp">
+
+        <androidx.camera.view.PreviewView
+            android:id="@+id/previewView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <com.fgl.scancheck.RoiOverlayView
+            android:id="@+id/roiOverlay"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <TextView
+            android:id="@+id/ocrStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|center_horizontal"
+            android:layout_marginBottom="6dp"
+            android:background="#99000000"
+            android:paddingStart="10dp"
+            android:paddingTop="4dp"
+            android:paddingEnd="10dp"
+            android:paddingBottom="4dp"
+            android:text="เล็งกล้องที่ข้อความ แล้วกดปุ่มยิง"
+            android:textColor="#FFFFFF"
+            android:textSize="13sp" />
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/resultBanner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#555555"
+        android:gravity="center"
+        android:paddingTop="12dp"
+        android:paddingBottom="6dp"
+        android:text="พร้อมสแกน"
+        android:textColor="#FFFFFF"
+        android:textSize="34sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/lastValueText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#555555"
+        android:gravity="center"
+        android:paddingStart="10dp"
+        android:paddingEnd="10dp"
+        android:paddingBottom="12dp"
+        android:text="กดปุ่มยิงลำแสงที่เครื่องสแกน"
+        android:textColor="#FFFFFF"
+        android:textIsSelectable="true"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/counterText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:padding="8dp"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/scanInput"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:background="#2A2A2A"
+        android:hint="ช่องรับข้อมูลจากเครื่องสแกน"
+        android:imeOptions="actionDone"
+        android:importantForAutofill="no"
+        android:inputType="text|textNoSuggestions"
+        android:maxLines="1"
+        android:padding="10dp"
+        android:textColor="#FFFFFF"
+        android:textColorHint="#888888"
+        android:textSize="16sp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingStart="10dp"
+        android:paddingTop="8dp"
+        android:text="ประวัติการสแกน (ล่าสุดอยู่บน)"
+        android:textColor="#AAAAAA"
+        android:textSize="13sp" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <TextView
+            android:id="@+id/historyText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="monospace"
+            android:padding="10dp"
+            android:textColor="#EEEEEE"
+            android:textIsSelectable="true"
+            android:textSize="14sp" />
+    </ScrollView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="6dp">
+
+        <Button
+            android:id="@+id/btnSettings"
+            android:layout_width="0dp"
+            android:layout_height="58dp"
+            android:layout_weight="1"
+            android:layout_marginStart="2dp"
+            android:layout_marginEnd="2dp"
+            android:focusable="false"
+            android:paddingStart="2dp"
+            android:paddingEnd="2dp"
+            android:text="ตั้งค่า"
+            android:textSize="14sp" />
+        <Button
+            android:id="@+id/btnOcr"
+            android:layout_width="0dp"
+            android:layout_height="58dp"
+            android:layout_weight="1"
+            android:layout_marginStart="2dp"
+            android:layout_marginEnd="2dp"
+            android:focusable="false"
+            android:paddingStart="2dp"
+            android:paddingEnd="2dp"
+            android:text="อ่านข้อความ"
+            android:textSize="14sp" />
+        <Button
+            android:id="@+id/btnTorch"
+            android:layout_width="0dp"
+            android:layout_height="58dp"
+            android:layout_weight="1"
+            android:layout_marginStart="2dp"
+            android:layout_marginEnd="2dp"
+            android:focusable="false"
+            android:paddingStart="2dp"
+            android:paddingEnd="2dp"
+            android:text="ไฟ"
+            android:textSize="14sp" />
+        <Button
+            android:id="@+id/btnClear"
+            android:layout_width="0dp"
+            android:layout_height="58dp"
+            android:layout_weight="1"
+            android:layout_marginStart="2dp"
+            android:layout_marginEnd="2dp"
+            android:focusable="false"
+            android:paddingStart="2dp"
+            android:paddingEnd="2dp"
+            android:text="ล้าง"
+            android:textSize="14sp" />
+    </LinearLayout>
+</LinearLayout>
